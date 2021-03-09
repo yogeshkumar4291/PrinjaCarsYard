@@ -1,0 +1,43 @@
+﻿@page
+@model PrinjaCarsYard.Pages.Series.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Serie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie.Brand)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie.Brand.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie.name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie.name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie.price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie.price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Serie.Colours)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Serie.Colours)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Serie.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

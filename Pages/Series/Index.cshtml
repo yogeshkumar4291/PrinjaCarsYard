@@ -1,0 +1,54 @@
+﻿@page
+@model PrinjaCarsYard.Pages.Series.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie[0].Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie[0].name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie[0].price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie[0].Colours)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Serie) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Colours)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

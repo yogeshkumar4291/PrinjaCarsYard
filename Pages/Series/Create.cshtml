@@ -1,0 +1,48 @@
+﻿@page
+@model PrinjaCarsYard.Pages.Series.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Serie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Serie.BrandID" class="control-label"></label>
+                <select asp-for="Serie.BrandID" class ="form-control" asp-items="ViewBag.BrandID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Serie.name" class="control-label"></label>
+                <input asp-for="Serie.name" class="form-control" />
+                <span asp-validation-for="Serie.name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Serie.price" class="control-label"></label>
+                <input asp-for="Serie.price" class="form-control" />
+                <span asp-validation-for="Serie.price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Serie.Colours" class="control-label"></label>
+                <input asp-for="Serie.Colours" class="form-control" />
+                <span asp-validation-for="Serie.Colours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
